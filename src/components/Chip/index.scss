@@ -1,0 +1,58 @@
+.chip {
+  display: inline-block;
+  position: relative;
+  background: white;
+  mix-blend-mode: normal;
+  border-radius: 6px;
+  padding: 5px 8px;
+  display: flex;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0 1px 1px 1px;
+  max-width: calc(100% - 20px);
+
+  &-value {
+    display: inline-block;
+    font-weight: bold;
+    color: #1a1818;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &-delete-button {
+    font-weight: bold;
+    color: #1a1818;
+    padding: 0;
+    padding-left: 8px;
+    border: 0;
+    cursor: pointer;
+    visibility: hidden;
+    outline: none;
+    background: inherit;
+
+    display: flex;
+    align-items: center;
+
+    .icon-exclamation {
+      width: inherit;
+    }
+    .icon-times {
+      width: 9px;
+    }
+  }
+
+  &:hover {
+    background: #ededed;
+    .chip-delete-button {
+      visibility: visible;
+    }
+  }
+
+  &.invalid {
+    background: #f3b7bd;
+    .chip-delete-button {
+      visibility: visible;
+    }
+  }
+}
